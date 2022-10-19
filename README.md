@@ -1,34 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Lottry UI 
 
-## Getting Started
+This is a UI application build with Nextjs for interacting with [lottery smart contract](https://github.com/srihari11235/lottery-contract). A user can enter the lottery by clicking on 'Enter Lottery' button. This promotes a connection to the browser wallet account. On confirmation of the transaction for the 'entrance fee', the account of the user will be added to the lot. The total number of players who have entered the lottery can be seen in 'Number of players' in UI.
 
-First, run the development server:
+The winner is selected at random at predefined intervals. Once the winner is selected the UI is automatically updated with the winner's public account address, displayed next to 'Last Lottery Winner is:'.  
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Local Set Up 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Running UI
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Run command 'npm install' to install all packages
+2. Run command 'npm run dev' to start local server 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+#### Deploy smart contract 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Clone [repo](https://github.com/srihari11235/lottery-contract)
+2. Run command 'npm install' to install all packages
+3. Run command 'npx hardhat node' to start a local hardhat node.
+4. Run command 'npx hardhat deploy --network localhost' to deploy smart contract to local node.
 
-## Learn More
+#### Trigger Winner selection
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Clone [repo](https://github.com/srihari11235/lottery-contract) if not cloned before. 
+2. Run command 'npx hardhat run scripts/mockOffChain.ts --network localhost' to run mockOffChain.ts script. This script invokes the random winner selection and updates the lottert smart contract accordingly. 
