@@ -11,14 +11,14 @@ The winner for the lottery is selected at random predefined intervals. Once the 
 1. Run command 'npm install' to install all packages.
 2. Run command 'npm run dev' to start local server and view UI.
 
-#### Deploy smart contract 
+#### Deploying smart contract 
 
 1. Clone [repo](https://github.com/srihari11235/lottery-contract)
 2. Run command 'npm install' to install all packages.
 3. Run command 'npx hardhat node' to start a local hardhat node.
 4. Run command 'npx hardhat deploy --network localhost' to deploy smart contract to local node.
 
-#### Trigger Winner selection
+#### Triggering winner selection
 
 1. Clone [repo](https://github.com/srihari11235/lottery-contract) if not cloned before. 
 2. Run command 'npx hardhat run scripts/mockOffChain.ts --network localhost' to run mockOffChain.ts script. This script invokes the random winner selection and updates the lottert smart contract accordingly. 
